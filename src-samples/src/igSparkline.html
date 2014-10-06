@@ -1,0 +1,68 @@
+﻿|title|igSparkline|title|
+
+|styles|
+	<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.shared.css" rel="stylesheet" />
+|styles|
+
+|content|
+<div ng-app="igniteui-sample" ng-controller="sparklineController">
+    <h1 class="push-down-md"><a href="http://igniteui.com/sparkline/overview" target="_blank">igSparkline</a></h1>
+    <div class="row description">
+        <div class="alert alert-info col-md-5 try-it-out">
+            <span class="h4">TRY IT OUT:</span>
+            <hr />
+            <p>Change the data in the table and see how the igSparkline responds.</p>
+        </div>
+        <div class="col-md-4">
+            <p class="lead">This sample demonstrates how create an igSparkline using an AngularJS directive.</p>
+            <p><a href="https://github.com/IgniteUI/igniteui-angular/blob/master/samples/igSparkline.html" class="btn btn-default btn-lg btn-primary" target="_blank"><i class="fa fa-code fa-lg"></i>Explore the Code</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Line</h4>
+            <ig-sparkline data-source="invoices" value-member-path="Change" height="100px" width="90%" tooltip-template="Low:${Low}<br>High:${High}" marker-visibility="visible">
+	</ig-sparkline>
+            <h4>Area</h4>
+            <ig-sparkline data-source="invoices" value-member-path="Change" height="100px" width="90%" display-type="area">
+	</ig-sparkline>
+        </div>
+        <div class="col-md-6">
+            <h4>Column</h4>
+            <ig-sparkline data-source="invoices" value-member-path="Change" height="100px" width="90%" display-type="column">
+	</ig-sparkline>
+            <h4>Win-Loss</h4>
+            <ig-sparkline data-source="invoices" value-member-path="Change" height="100px" width="90%" display-type="winLoss">
+	</ig-sparkline>
+        </div>
+    </div>
+    <table id="simpletable" class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>High</th>
+                <th>Low</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in invoices" ng-if="product.High >1050">
+                <td>{{product.High}}</td>
+                <td>{{product.Low}}</td>
+                <td>
+                    <input id="vote" type="number" ng-model="product.Change" class="form-control" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+|content|
+
+|scripts|
+<script src="http://cdn-na.infragistics.com/jquery/20132/latest/js/infragistics.core.js" type="text/javascript"></script>
+<script src="http://cdn-na.infragistics.com/jquery/20132/latest/js/infragistics.lob.js" type="text/javascript"></script>
+<script src="http://cdn-na.infragistics.com/jquery/20132/latest/js/infragistics.dv.js" type="text/javascript"></script>
+<script src="../src/igniteui-angular.js"></script>
+<script src="js/igniteui-sample.js"></script>
+<script src="js/data/invoices.js"></script>
+|scripts|

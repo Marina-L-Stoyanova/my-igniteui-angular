@@ -256,6 +256,63 @@
     $.ig.angular.igSparkline = angular.extend($.ig.angular.igSparkline || {}, $.ig.angular.igBaseChart);
     $.ig.angular.igFunnelChart = angular.extend($.ig.angular.igFunnelChart || {}, $.ig.angular.igBaseChart);
 
+    $.ig.angular.igMap = angular.extend($.ig.angular.igMap || {}, $.ig.angular.igDataChart);
+    //QRCodeBarcode specific code for binding
+    $.ig.angular.igQRCodeBarcode = $.ig.angular.igQRCodeBarcode || {};
+    $.ig.angular.igQRCodeBarcode.element = $.ig.angular.igQRCodeBarcode.element || "<div></div>";
+
+    // Two way data binding for the QRCodeBarcode controls
+    $.ig.angular.igQRCodeBarcode.bindEvents = $.ig.angular.igQRCodeBarcode.bindEvents || function (scope, element, attrs) {
+
+        var controlName = attrs["data-ig-control-name"];
+        var unbinder;
+
+        unbinder = scope.$watch(attrs.data, function (value) {
+            element.igQRCodeBarcode("option", "data", value);
+        }, true);
+        markWatcher(scope, "igQRCodeBarcode", attrs);
+        element.one('$destroy', function () {
+            unbinder();
+        });
+    };
+
+    //igPieChart specific code for two way data binding
+    $.ig.angular.igPieChart = $.ig.angular.igPieChart || {};
+
+    // Two way data binding for the tree control
+    $.ig.angular.igPieChart.bindEvents = $.ig.angular.igPieChart.bindEvents || function (scope, element, attrs) {
+        var unbinder;
+        // rebind data source on changes
+        unbinder = scope.$watch(attrs.source, function (newValue) {
+            $(element).igPieChart("option", "dataSource", newValue);
+        }, true);
+        markWatcher(scope, "igPieChart", attrs);
+        element.one('$destroy', function () {
+            unbinder();
+        });
+    };
+
+    //igPieChart specific code for two way data binding
+    $.ig.angular.igRating = $.ig.angular.igRating || {};
+    $.ig.angular.igRating.events = ["igratingvaluechange"];
+    
+    // Two way data binding for the tree control
+    $.ig.angular.igRating.bindEvents = $.ig.angular.igRating.bindEvents || function (scope, element, attrs) {
+        var unbinder;
+        element.on($.ig.angular.igRating.events.join(' '), function (event, args) {
+            scope.$apply(function () {
+               scope[attrs.value] = args.value;
+            });
+        })
+        unbinder = scope.$watch(attrs.value, function (newValue) {
+            $(element).igRating("option", "value", newValue);
+        }, true);
+        markWatcher(scope, "igRating", attrs);
+        element.one('$destroy', function () {
+            unbinder();
+        });
+    };
+
     // Mark watchers for discoverability
     function markWatcher (scope, controlName, attrs) {
     	// Angular uses unshift(), so the last watcher is at 0:

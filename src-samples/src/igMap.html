@@ -5,7 +5,7 @@
 |styles|
 
 |content|
-<div ng-app="igniteui-sample">
+<div ng-app="igniteui-sample" ng-controller="mapController">
 	<h1 class="push-down-md"><a href="http://igniteui.com/map/overview" target="_blank">igMap</a></h1>
     <div class="row description">
         <div class="alert alert-info col-md-5 try-it-out">
@@ -22,7 +22,9 @@
         </div>
     </div>
 
-	<ig-map vertical-zoomable="true" horizontal-zoomable="true">
+	<ig-map vertical-zoomable="true" horizontal-zoomable="true" data-source="country">
+		<window-rect left="0.225" top="0.1" height = "0.6" width="0.6"></window-rect>
+		<series><series name="worldCities" type="geographicSymbol"  latitude-member-path="Latitude" longitude-member-path="Longitude" marker-outline="#28b51c" marker-brush="#28b51c"></series></series>
 	</ig-map>
 </div>
 |content|
@@ -37,4 +39,5 @@
 <script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.map.js"></script>
 <script src="../src/igniteui-angular.js"></script>
 <script src="js/igniteui-sample.js"></script>
+<script src="js/data/country.js"></script>
 |scripts|

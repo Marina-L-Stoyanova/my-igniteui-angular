@@ -186,3 +186,49 @@ app.controller('tileManagerController',
         $scope.candidates = candidates.data;
 
     }]);
+
+app.controller('mapController', [
+    '$scope', 'country',
+    function ($scope, country) {
+        $scope.country = country.data;
+    }
+]);
+
+app.controller('sparklineController', [
+    '$scope', 'invoices',
+    function ($scope, invoices) {
+        // only needed until https://github.com/angular/angular.js/issues/6683 is resolved
+        for (var i = 0; i < invoices.data.length; i++) {
+            invoices.data[i].Change = parseFloat(invoices.data[i].Change);
+        };
+        $scope.invoices = invoices.data;
+    }
+]);
+
+app.controller('funnelChartController', [
+    '$scope', 'department',
+    function ($scope, department) {
+        $scope.department = department.data;
+    }
+]);
+
+app.controller('qrCodeBarcodeController', [
+    '$scope',
+    function ($scope) {
+        $scope.qrcode = "www.igniteui.com";
+    }
+]);
+
+app.controller('pieChartController', [
+    '$scope', 'department',
+    function ($scope, department) {
+        $scope.department = department.data;
+    }
+]);
+
+app.controller('ratingController', [
+    '$scope',
+        function ($scope) {
+            $scope.rating = 0.6;
+        }
+]);

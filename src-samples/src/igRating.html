@@ -1,0 +1,41 @@
+﻿|title|igRating|title|
+
+|styles|
+	<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.shared.css" rel="stylesheet" />
+|styles|
+
+|content|
+  <div ng-app="igniteui-sample" ng-controller="ratingController">
+        <h1 class="push-down-md"><a href="http://igniteui.com/rating/overview" target="_blank">igRating</a></h1>
+        <div class="row description">
+            <div class="alert alert-info col-md-5 try-it-out">
+                <span class="h4">TRY IT OUT:</span>
+                <hr />
+                <p>Change the vote and see the rating reevaluate.</p>
+            </div>
+            <div class="col-md-4">
+                <p class="lead">This sample demonstrates how to use AngularJS directives to create igRating.</p>
+                <p><a href="https://github.com/IgniteUI/igniteui-angular/blob/master/samples/igRating.html" class="btn btn-default btn-lg btn-primary" target="_blank"><i class="fa fa-code fa-lg"></i>Explore the Code</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <ig-rating vote-count="10" value-as-percent="true" value="rating">
+            </ig-rating> 
+        </div>       
+      
+        <div class="col-md-6">
+            Vote:<input type="text" ng-model="rating">
+        </div>
+        </div>
+    </div>
+|content|
+
+|scripts|
+<script src="http://cdn-na.infragistics.com/jquery/20132/latest/js/infragistics.core.js" type="text/javascript"></script>
+<script src="http://cdn-na.infragistics.com/jquery/20132/latest/js/infragistics.lob.js" type="text/javascript"></script>
+<script src="http://cdn-na.infragistics.com/jquery/20132/latest/js/infragistics.dv.js" type="text/javascript"></script>
+<script src="../src/igniteui-angular.js"></script>
+<script src="js/igniteui-sample.js"></script>
+|scripts|
