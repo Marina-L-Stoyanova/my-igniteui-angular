@@ -1,0 +1,66 @@
+|title|igHierarchicalGrid|title|
+
+|styles|
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.grid.css" rel="stylesheet" />
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.editors.css" rel="stylesheet" />
+|styles|
+
+|content|
+<div ng-app="igniteui-sample" ng-controller="hierarchicalGridController">
+    <h1 class="push-down-md"><a href="http://igniteui.com/hierarchical-grid/overview" target="_blank">igHierarchicalGrid</a></h1>
+    
+    <div class="row description">
+        <div class="col-md-12">
+            <p class="lead">This sample demonstrates how AngularJS directives are used to instantiate igHierarchicalGrid.</p>
+            <p><a href="https://github.com/IgniteUI/igniteui-angular/blob/master/samples/hierarchical-grid" class="btn btn-default btn-lg btn-primary" target="_blank"><i class="fa fa-code fa-lg"></i> Explore the Code</a></p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <ig-hierarchical-grid id="grid1" 
+                     data-source="northwindEmployees" 
+                     width="100%" 
+                     height="400px" 
+                     auto-commit="true" 
+                     auto-generate-columns="false"
+                     auto-generate-layouts="false">
+                <columns>
+                    <column key="FirstName" header-text="First Name" width="25%" data-type="string"></column>
+                    <column key="LastName" header-text="Last Name"  width="25%"  data-type="string"></column>
+                    <column key="Title" header-text="Title"  width="25%" data-type="string"></column>
+                    <column key="BirthDate" header-text="Birth Date"  width="25%" data-type="date"></column>
+                </columns>
+                <column-layouts>
+                    <column-layout key="Orders" response-data-key="results" primary-key="OrderID" auto-generate-columns="false" width="100%">
+                        <columns>
+                            <column key="OrderID" header-text="OrderID" width="25%" data-type="string"></column>
+                            <column key="Freight" header-text="Freight"  width="25%"  data-type="string"></column>
+                            <column key="ShipName" header-text="ShipName"  width="25%" data-type="string"></column>
+                            <column key="ShipAddress" header-text="ShipAddress"  width="25%" data-type="string"></column>
+                        </columns>
+                        <features>
+                            <feature name="Paging" page-size="10"></feature>
+                        </features>
+                    </column-layout>
+                </column-layouts>
+            </ig-hierarchical-grid>
+            
+        </div>
+    </div>
+</div>
+|content|
+
+|scripts|
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.util.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.datasource.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.shared.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.grid.framework.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.grid.hierarchical.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.editors.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.grid.paging.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.templating.js"></script>
+<script src="../src/igniteui-angular.js"></script>
+<script src="controller.js"></script>
+<script src="js/data/northwind-employees.js"></script>
+|scripts|
