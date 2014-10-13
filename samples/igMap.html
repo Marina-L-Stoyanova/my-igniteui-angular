@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Map - Ignite UI Grid integration with AngularJS</title>
+	<title> - Ignite UI Grid integration with AngularJS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="/igniteui-angular/samples/sample.css" />
     
-<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.map.css" rel="stylesheet" />
-
 </head>
 <body class="container">
 
@@ -35,28 +33,8 @@
         </div>
     </div>
     
-<div ng-app="igniteui-sample" ng-controller="mapController">
-	<h1 class="push-down-md"><a href="http://igniteui.com/map/overview" target="_blank">igMap</a></h1>
-    <div class="row description">
-        <div class="alert alert-info col-md-5 try-it-out">
-            <span class="h4">TRY IT OUT:</span>
-            <hr />
-            <ul>
-                <li>Use the mouse wheel to zoom in on the map</li>
-                <li>Click and drag or use the arrow keys to pan the map</li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <p class="lead">This sample demonstrates how create an igMap using an AngularJS directive.</p>
-            <p><a href="https://github.com/IgniteUI/igniteui-angular/blob/master/samples/igMap.html" class="btn btn-default btn-lg btn-primary" target="_blank"><i class="fa fa-code fa-lg"></i> Explore the Code</a></p>
-        </div>
-    </div>
-
-	<ig-map vertical-zoomable="true" horizontal-zoomable="true" data-source="country">
-		<window-rect left="0.225" top="0.1" height = "0.6" width="0.6"></window-rect>
-		<series><series name="worldCities" type="geographicSymbol"  latitude-member-path="Latitude" longitude-member-path="Longitude" marker-outline="#28b51c" marker-brush="#28b51c"></series></series>
-	</ig-map>
-</div>
+	The sample is moved to the following link: <a href="http://igniteui.github.io/igniteui-angular/samples/map/index.html">igMap</a>
+You will be automatically redirected to the new sample link in 3 seconds.
 
 	<footer>
         <p>
@@ -72,16 +50,11 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
     
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.util.js"></script>
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.shared.js"></script>
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.datasource.js"></script>
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.dv.core.js"></script>
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.dvcommonwidget.js"></script>
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.geographicmap_core.js"></script>
-<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.map.js"></script>
-<script src="../src/igniteui-angular.js"></script>
-<script src="js/igniteui-sample.js"></script>
-<script src="js/data/country.js"></script>
+	<script type="text/javascript">
+		setTimeout(function() {
+			document.location="http://igniteui.github.io/igniteui-angular/samples/map/index.html";
+		}, 3000);
+	</script>
 
 </body>
 </html>

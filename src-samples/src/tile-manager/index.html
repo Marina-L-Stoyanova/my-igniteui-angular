@@ -1,0 +1,105 @@
+|title|Tile Manager|title|
+
+|styles|
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.splitter.css" rel="stylesheet" />
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.layout.css" rel="stylesheet" />
+<link type="text/css" href="//cdn-na.infragistics.com/jquery/20132/latest/css/structure/modules/infragistics.ui.tilemanager.css" rel="stylesheet" />
+<style type="text/css">
+    .dashboard {
+        position: relative;
+        width: 100%;
+        height: 550px;
+    }
+
+    #dashboard h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #dashboard h3 {
+        text-align: center;
+    }
+
+    #dashboard img {
+        width: 150px;
+        height: 175px;
+        margin-left: -75px;
+        margin-top: 15px;
+        position: absolute;
+        left: 50%;
+    }
+
+    #dashboard .ui-igtile-maximized img {
+        width: 200px;
+        height: 250px;
+        position: static;
+        float: left;
+        margin: 20px 20px 20px 0;
+    }
+
+    #dashboard .ui-igtilemanager-right img {
+        width: 60px;
+        height: 80px;
+        margin-left: -30px;
+        margin-top: 15px;
+    }
+
+    .ui-igtile-maximized .text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .ui-igtile-maximized div {
+        text-align: left;
+    }
+
+    .linkedIn, .skills {
+        word-wrap: break-word;
+    }
+    div.ui-igtile-inner-container h4 {
+        margin-bottom: 0.1em;
+    }
+</style>
+|styles|
+    
+|content|
+<div ng-app="igniteui-sample" ng-controller="tileManagerController">
+
+    <h1 class="push-down-md"><a href="http://igniteui.com/tile-manager/overview" target="_blank">igTileManager</a></h1>
+    
+    <div class="row description">
+        <div class="col-md-12">
+            <p class="lead">This sample demonstrates how AngularJS directives are used to instantiate igTileManager.</p>
+            <p><a href="https://github.com/IgniteUI/igniteui-angular/blob/master/samples/tile-manager" class="btn btn-default btn-lg btn-primary" target="_blank"><i class="fa fa-code fa-lg"></i> Explore the Code</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ig-tile-manager 
+            id="dashboard" 
+            data-source="candidates" 
+            margin-left="10" 
+            margin-top="10" 
+            right-panel-tiles-width="200"
+            right-panel-tiles-height="156"
+            class="dashboard"
+            maximized-state='<h3>${name}</h3><img src="${picture}" title="${name}" alt="error" /><p class="text">${text}</p><div style="clear: both"><span class="color">Skills:</span></div><ul class="skills"></ul><div class="linkedIn"><span class="color">LinkedIn:</span> <a href="${linkedin}" target="_blank">http://www.linkedin.com/profile</a></div>'
+            minimized-state='<h4>${name}</h4><img src="${picture}" class="minimized" title="${name}" alt="error" />'
+            >
+            </ig-tile-manager>
+        </div>
+    </div>
+</div>
+|content|
+
+|scripts|
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.util.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.datasource.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.splitter.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.templating.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.layoutmanager.js"></script>
+<script src="//cdn-na.infragistics.com/jquery/20132/latest/js/modules/infragistics.ui.tilemanager.js"></script>
+<script src="../src/igniteui-angular.js"></script>
+<script src="controller.js"></script>
+<script src="js/data/candidates.js"></script>
+|scripts|
